@@ -1,0 +1,14 @@
+service: my-bff-service
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: cn-hangzhou
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: hello
+          method: get
